@@ -1,0 +1,9 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "welcome.scss";
+@import "projects.scss";
+
+body {
+  padding-top: 70px;
+}
