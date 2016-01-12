@@ -2,14 +2,18 @@
   <div class="greeting row">
     <div class="text-center col-md-8 col-md-offset-2">
 
-      <img id="push-pin" src="<%= asset_path('push_pin.jpg') %>">
+      <img id="push-pin" src="<%= image_path('push_pin.jpg') %>">
 
       <h1 class="text-center">Welcome to Corkboard</h1>
 
       <br>
 
       <div class="text-center">
-        <a class="btn btn-default btn-lg" href="#" role="button">Log In With GitHub</a>
+        <% if current_user %>
+          <%= link_to "My Projects", projects_path, class: "btn btn-default btn-lg" %>
+        <% else %>
+          <%= link_to "Sign In With GitHub", login_path, class: "btn btn-default btn-lg" %>
+        <% end %>
       </div>
     </div>
   </div>
