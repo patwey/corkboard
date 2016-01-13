@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
       new_user.uid      = auth["uid"]
       new_user.name     = auth["info"]["name"]
       new_user.username = auth["extra"]["raw_info"]["login"]
+      new_user.token    = auth["credentials"]["token"]
     end
   end
 

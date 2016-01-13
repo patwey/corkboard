@@ -1,10 +1,11 @@
 <div class="container">
+
   <!-- project title -->
-  <!-- <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <h1 class="text-center">apicurious</h1>
+  <div class="row">
+    <div class="text-center col-md-12">
+      <h1 id="repo-name"><%= "#{current_user.username}/#{@repo_name}" %></h1>
     </div>
-  </div> -->
+  </div>
 
   <!-- column names -->
   <div class="row">
@@ -23,149 +24,13 @@
 
   <!-- cards -->
   <div class="row">
-    <!-- Backlog cards -->
-    <div class="col-md-4">
-      <div class="panel panel-warning">
-
-        <div class="panel-heading">
-          1 - Make it better
-        </div>
-
-        <div class="panel-body">
-          <span>
-            As a User,
-            When I lorem,
-            And I ipsum,
-            Then I lorem.
-          </span>
-        </div>
-
-        <div class="text-right">
-          <a class="arrow btn btn-default btn-sm" href="#"><span class="glyphicon glyphicon-menu-right"</span></a>
-        </div>
-      </div>
-
-      <div class="panel panel-warning">
-        <div class="panel-heading">
-          2 - Make it better
-        </div>
-
-        <div class="panel-body">
-          <span>
-            As a User,
-            When I lorem,
-            And I ipsum,
-            Then I lorem.
-          </span>
-        </div>
-
-        <div class="text-right">
-          <a class="arrow btn btn-default btn-sm" href="#"><span class="glyphicon glyphicon-menu-right"</span></a>
-        </div>
-      </div>
-
-      <div class="panel panel-warning">
-        <div class="panel-heading">
-          3 - Make it better
-        </div>
-
-        <div class="panel-body">
-          <span>
-            As a User,
-            When I lorem,
-            And I ipsum,
-            Then I lorem.
-          </span>
-        </div>
-
-        <div class="text-right">
-          <a class="arrow btn btn-default btn-sm" href="#"><span class="glyphicon glyphicon-menu-right"</span></a>
-        </div>
-      </div>
+    <div id="backlog" class="col-md-4">
     </div>
 
-    <!-- In Progress cards -->
-    <div class="col-md-4">
-      <div class="panel panel-warning">
-        <div class="panel-heading">
-          4 - Make it better
-        </div>
-
-        <div class="panel-body">
-          <span>
-            As a User,
-            When I lorem,
-            And I ipsum,
-            Then I lorem.
-          </span>
-        </div>
-
-        <div class="text-right">
-          <a class="arrow btn btn-default btn-sm" href="#"><span class="glyphicon glyphicon-menu-left"</span></a>
-          <a class="arrow btn btn-default btn-sm" href="#"><span class="glyphicon glyphicon-menu-right"</span></a>
-        </div>
-      </div>
-
-      <div class="panel panel-warning">
-        <div class="panel-heading">
-          5 - Make it better
-        </div>
-
-        <div class="panel-body">
-          <span>
-            As a User,
-            When I lorem,
-            And I ipsum,
-            Then I lorem.
-          </span>
-        </div>
-
-          <div class="text-right">
-            <a class="arrow btn btn-default btn-sm" href="#"><span class="glyphicon glyphicon-menu-left"</span></a>
-            <a class="arrow btn btn-default btn-sm" href="#"><span class="glyphicon glyphicon-menu-right"</span></a>
-          </div>
-        </div>
+    <div id="in-progress" class="col-md-4">
     </div>
 
-    <!-- Complete cards -->
-    <div class="col-md-4">
-      <div class="panel panel-warning">
-        <div class="panel-heading">
-          6 - Make it better
-        </div>
-
-        <div class="panel-body">
-          <span>
-            As a User,
-            When I lorem,
-            And I ipsum,
-            Then I lorem.
-          </span>
-        </div>
-
-        <div class="text-right">
-          <a class="arrow btn btn-default btn-sm" href="#"><span class="glyphicon glyphicon-menu-left"</span></a>
-        </div>
-      </div>
-
-      <div class="panel panel-warning">
-        <div class="panel-heading">
-          7 - Make it better
-        </div>
-
-        <div class="panel-body">
-          <span>
-            As a User,
-            When I lorem,
-            And I ipsum,
-            Then I lorem.
-          </span>
-        </div>
-
-        <div class="text-right">
-          <a class="arrow btn btn-default btn-sm" href="#"><span class="glyphicon glyphicon-menu-left"</span></a>
-        </div>
-      </div>
+    <div id="complete" class="col-md-4">
     </div>
   </div>
 </div>
