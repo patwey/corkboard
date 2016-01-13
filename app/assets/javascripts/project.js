@@ -46,8 +46,8 @@ function renderInProgressIssue(issue) {
       "</div>" +
 
       "<div class='text-right'>" +
-        "<a class='arrow btn btn-default btn-sm' href='#'><span class='glyphicon glyphicon-menu-left'</span></a>" +
-        "<a class='arrow btn btn-default btn-sm' href='#'><span class='glyphicon glyphicon-menu-right'</span></a>" +
+        "<a class='to-backlog arrow btn btn-default btn-sm' href='#'><span class='glyphicon glyphicon-menu-left'</span></a>" +
+        "<a class='to-complete arrow btn btn-default btn-sm' href='#'><span class='glyphicon glyphicon-menu-right'</span></a>" +
       "</div>" +
     "</div>"
   )
@@ -66,7 +66,7 @@ function renderBacklogIssue(issue) {
       "</div>" +
 
       "<div class='text-right'>" +
-        "<a class='arrow btn btn-default btn-sm' href='#'><span class='glyphicon glyphicon-menu-right'</span></a>" +
+        "<a class='to-in-progress arrow btn btn-default btn-sm' href='#'><span class='glyphicon glyphicon-menu-right'</span></a>" +
       "</div>" +
     "</div>"
   )
@@ -84,8 +84,7 @@ function renderCompleteIssue(issue) {
       "</div>" +
 
       "<div class='text-right'>" +
-        "<a class='arrow btn btn-default btn-sm' href='#'><span class='glyphicon glyphicon-menu-left'</span></a>" +
-        "<a class='arrow btn btn-default btn-sm' href='#'><span class='glyphicon glyphicon-menu-right'</span></a>" +
+        "<a class='to-in-progress arrow btn btn-default btn-sm' href='#'><span class='glyphicon glyphicon-menu-left'</span></a>" +
       "</div>" +
     "</div>"
   )
