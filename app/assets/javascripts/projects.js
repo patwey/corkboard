@@ -8,7 +8,7 @@ function renderProject(repo) {
     "<div class='row'>" +
     "<div class='container'>" +
     "<div class='col-md-8 col-md-offset-2'>" +
-    "<a class='board-panel' href='#''>" + // add link to show page here
+    "<a class='board-panel' href='/projects/" + repo.name + "''>" +
       "<div class='panel panel-warning'>" +
       "<div class='panel-heading'>" +
         "<h3 class='panel-title'>"+ repo.name + "</h3>" +

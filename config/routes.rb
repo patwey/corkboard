@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   get "/current", to: "users#current"
 
-  resources :projects, only: [:index, :show]
+  resources :projects, only: [:index]
+  get "/projects/:project_name", to: "projects#show"
 end
