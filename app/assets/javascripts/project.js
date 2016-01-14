@@ -25,6 +25,10 @@ function toInProgress() {
           alert(xhr.responseText)
         }
       })
+      .always(function() {
+        toComplete()
+        toBacklog()
+      })
     })
   })
 }
@@ -52,6 +56,9 @@ function toComplete() {
           alert(xhr.responseText)
         }
       })
+      .always(function() {
+        toInProgress()
+      })
     })
   })
 }
@@ -78,6 +85,9 @@ function toBacklog() {
         failure: function(xhr) {
           alert(xhr.responseText)
         }
+      })
+      .always(function() {
+        toInProgress()
       })
     })
   })
