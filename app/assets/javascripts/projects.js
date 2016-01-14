@@ -27,10 +27,10 @@ function renderProject(repo) {
 }
 
 function fetchRepos() {
-  $.get("/current", function(current_user) {
-    var current_username = current_user.username
+  $.get("/current", function(currentUser) {
+    var currentUsername = currentUser.username
 
-    $.get("https://api.github.com/users/"+ current_username +"/repos", function(repos) {
+    $.get("https://api.github.com/users/"+ currentUsername +"/repos", function(repos) {
       $.each(repos, function(index, repo) {
         renderProject(repo)
       })
