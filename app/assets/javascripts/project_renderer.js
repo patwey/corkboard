@@ -1,7 +1,3 @@
-$(document).ready(function() {
-  fetchRepos()
-})
-
 function renderProject(repo) {
   var description = repoDescription(repo)
   $("#projects").append(
@@ -24,18 +20,6 @@ function renderProject(repo) {
     "</div>" +
     "</div>"
   )
-}
-
-function fetchRepos() {
-  $.get("/current", function(currentUser) {
-    var currentUsername = currentUser.username
-
-    $.get("https://api.github.com/users/"+ currentUsername +"/repos", function(repos) {
-      $.each(repos, function(index, repo) {
-        renderProject(repo)
-      })
-    })
-  })
 }
 
 function repoDescription(repo) {
