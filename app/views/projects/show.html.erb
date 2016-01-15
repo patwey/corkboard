@@ -2,8 +2,12 @@
 
   <!-- project title -->
   <div class="row">
-    <div class="text-center col-md-12">
+    <div class="col-md-6">
       <h1 id="repo-name"><%= "#{current_user.username}/#{@repo_name}" %></h1>
+    </div>
+
+    <div class="add-issue text-right col-md-6">
+      <a class="btn btn-default" href="#" role="button"><span class="glyphicon glyphicon-plus"></span> Add Issue</a>
     </div>
   </div>
 
