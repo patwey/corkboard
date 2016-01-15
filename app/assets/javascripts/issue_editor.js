@@ -1,5 +1,5 @@
 function toInProgress() {
-  $(".to-in-progress").on('click', function() {
+  $(".to-in-progress").off("click").on("click", function() {
     var repoName = $('#repo-name').html()
     var $issue = $(this).parents(".issue")
     var $issueNumber = $(this).parents(".issue").children(".panel-heading").children(".issue-number").html()
@@ -30,7 +30,7 @@ function toInProgress() {
 }
 
 function toComplete() {
-  $(".to-complete").on('click', function() {
+  $(".to-complete").off("click").on("click", function() {
     var repoName = $('#repo-name').html()
     var $issue = $(this).parents(".issue")
     var $issueNumber = $(this).parents(".issue").children(".panel-heading").children(".issue-number").html()
@@ -60,7 +60,7 @@ function toComplete() {
 }
 
 function toBacklog() {
-  $(".to-backlog").on('click', function() {
+  $(".to-backlog").off("click").on("click", function() {
     var repoName = $('#repo-name').html()
     var $issue = $(this).parents(".issue")
     var $issueNumber = $(this).parents(".issue").children(".panel-heading").children(".issue-number").html()
