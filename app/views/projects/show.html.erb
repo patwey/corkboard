@@ -14,34 +14,33 @@
     </div>
   </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="new-issue" tabindex="-1" role="dialog"
-       aria-labelledby="myModalLabel" aria-hidden="true">
+  <!-- modal -->
+  <div class="modal fade" id="new-issue" tabindex="-1" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
 
-        <!-- Modal Header -->
+        <!-- modal header -->
         <div class="modal-header">
           <button type="button" class="close"
                   data-dismiss="modal">
               <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title" id="myModalLabel">
+          <h4 class="modal-title">
             Add an Issue
           </h4>
         </div>
 
-        <!-- Modal Body -->
+        <!-- modal body -->
         <div class="modal-body">
           <form role="form">
             <div class="form-group">
               <label for="title">Title</label>
-              <input class="form-control" id="title"/>
+              <input class="form-control" id="issue-title"/>
             </div>
 
             <div class="form-group">
               <label for="description">Description</label>
-              <textarea class="form-control" id="description" rows="4"></textarea>
+              <textarea class="form-control" id="issue-description" rows="4"></textarea>
             </div>
 
             <div class="text-right">
@@ -49,7 +48,8 @@
                       data-dismiss="modal">
                 Close
               </button>
-              <button type="submit" class="btn btn-default submit">Submit</button>
+              <button type="submit" data-dismiss="modal"
+                      class="btn btn-default" id="submit-issue">Submit</button>
             </div>
           </form>
         </div>
