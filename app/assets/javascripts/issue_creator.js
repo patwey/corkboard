@@ -21,6 +21,10 @@ function createIssue() {
           console.log(xhr.responseText);
         }
       })
+
+      .always(function() {
+        toInProgress();
+      });
     })
   })
 }
