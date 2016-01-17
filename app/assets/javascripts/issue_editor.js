@@ -22,6 +22,7 @@ function toInProgress() {
       })
       .always(function() {
         toComplete()
+        draggableIssues()
         toBacklog()
       })
     })
@@ -52,6 +53,7 @@ function toComplete() {
       })
       .always(function() {
         toInProgress()
+        draggableIssues()
       })
     })
   })
@@ -81,6 +83,7 @@ function toBacklog() {
       })
       .always(function() {
         toInProgress()
+        draggableIssues()
       })
     })
   })

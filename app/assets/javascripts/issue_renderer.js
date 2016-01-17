@@ -23,7 +23,7 @@ function issueTemplate(issue, type) {
   var body     = issueBody(issue);
 
   $(selector).append(
-    "<div class='issue panel panel-warning'>" +
+    "<div class='issue panel panel-warning ui-widget-content'>" +
     "<div class='panel-heading'>" +
     "<span class='issue-number'>" + issue.number + "</span>" + " - " + issue.title +
     "</div>" +

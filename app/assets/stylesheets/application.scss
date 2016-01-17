@@ -1,8 +1,10 @@
+@import "jquery-ui";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 @import "welcome.scss";
 @import "projects.scss";
+@import "issues.scss";
 
 body {
   padding-top: 70px;

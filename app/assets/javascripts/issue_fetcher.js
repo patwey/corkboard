@@ -12,5 +12,6 @@ function fetchIssues() {
     toInProgress();
     toComplete();
     toBacklog();
+    draggableIssues();
   });
 }
