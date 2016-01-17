@@ -7,7 +7,6 @@ function toInProgress() {
     $.get("/current", function(currentUser) {
       var accessToken = currentUser.token
       var postParams = '{"state": "open", "labels": ["in progress"]}'
-      var url = "https://api.github.com/repos/" + repoName + "/issues/" + $issueNumber +"?access_token=" + accessToken
 
       $.ajax({
         type: "PATCH",
@@ -38,7 +37,6 @@ function toComplete() {
     $.get("/current", function(currentUser) {
       var accessToken = currentUser.token
       var postParams = '{"state": "closed", "labels": []}'
-      var url = "https://api.github.com/repos/" + repoName + "/issues/" + $issueNumber +"?access_token=" + accessToken
 
       $.ajax({
         type: "PATCH",
@@ -68,7 +66,6 @@ function toBacklog() {
     $.get("/current", function(currentUser) {
       var accessToken = currentUser.token
       var postParams = '{"state": "open", "labels": []}'
-      var url = "https://api.github.com/repos/" + repoName + "/issues/" + $issueNumber +"?access_token=" + accessToken
 
       $.ajax({
         type: "PATCH",
