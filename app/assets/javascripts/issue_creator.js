@@ -23,7 +23,7 @@ function createIssue() {
       })
 
       .always(function() {
-        toInProgress();
+        draggableIssues();
       });
     })
   })

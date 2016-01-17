@@ -9,9 +9,6 @@ function fetchIssues() {
   })
 
   .always(function() {
-    toInProgress();
-    toComplete();
-    toBacklog();
     draggableIssues();
   });
 }

@@ -1,35 +1,26 @@
 function draggableIssues() {
-  $(".issue").draggable();
+  $(".issue").draggable({
+    containment: $(".cards")
+  });
+
   $( "#in-progress" ).droppable({
     accept: ".issue",
     drop: function(event, ui) {
-      var repoName = $('#repo-name').html()
-      var $issue = ui.draggable
-      var $issueNumber = ui.draggable.children(".panel-heading").children(".issue-number").html()
+      toInProgress(ui.draggable);
+    }
+  });
 
-      $.get("/current", function(currentUser) {
-        var accessToken = currentUser.token
-        var postParams = '{"state": "open", "labels": ["in progress"]}'
+  $( "#backlog" ).droppable({
+    accept: ".issue",
+    drop: function(event, ui) {
+      toBacklog(ui.draggable);
+    }
+  });
 
-        $.ajax({
-          type: "PATCH",
-          url:  "https://api.github.com/repos/" + repoName + "/issues/" + $issueNumber +"?access_token=" + accessToken,
-          data: postParams,
-          success: function(newIssue) {
-            renderIssue(newIssue)
-            $issue.remove()
-          },
-          failure: function(xhr) {
-            alert(xhr.responseText)
-          }
-        })
-
-        .always(function() {
-          toComplete()
-          draggableIssues()
-          toBacklog()
-        })
-      });
+  $( "#complete" ).droppable({
+    accept: ".issue",
+    drop: function(event, ui) {
+      toComplete(ui.draggable);
     }
   });
 }

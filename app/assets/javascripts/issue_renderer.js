@@ -19,7 +19,6 @@ function getIssueType(issue, labels) {
 
 function issueTemplate(issue, type) {
   var selector = issueSelector(type);
-  var editBtns = issueEditBtns(type);
   var body     = issueBody(issue);
 
   $(selector).append(
@@ -32,9 +31,6 @@ function issueTemplate(issue, type) {
     body +
     "</span>" +
     "</div>"+
-    "<div class='text-right'>" +
-    editBtns +
-    "</div>" +
     "</div>"
   );
 }
@@ -45,17 +41,6 @@ function issueSelector(type) {
                     "complete":"#complete" };
 
   return selectors[type];
-}
-
-function issueEditBtns(type) {
-  if (type === "in progress") {
-    return "<a class='to-backlog arrow btn btn-default btn-sm' href='#'><span class='glyphicon glyphicon-menu-left'</span></a>" +
-           "<a class='to-complete arrow btn btn-default btn-sm' href='#'><span class='glyphicon glyphicon-menu-right'</span></a>";
-  } else if (type === "complete") {
-    return "<a class='to-in-progress arrow btn btn-default btn-sm' href='#'><span class='glyphicon glyphicon-menu-left'</span></a>";
-  } else {
-    return "<a class='to-in-progress arrow btn btn-default btn-sm' href='#'><span class='glyphicon glyphicon-menu-right'</span></a>";
-  }
 }
 
 function issueBody(issue) {
