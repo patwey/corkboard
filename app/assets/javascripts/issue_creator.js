@@ -14,10 +14,11 @@ function createIssue() {
         data: issueParams,
         success: function(newIssue) {
           renderIssue(newIssue);
-          $("issue-title").val("");
-          $("issue-description").val("");
+          $("#issue-title").val("");
+          $("#issue-description").val("");
         },
         error: function(xhr) {
+          showErrorAlert();
           console.log(xhr.responseText);
         }
       })
@@ -27,4 +28,14 @@ function createIssue() {
       });
     })
   })
+}
+
+function showErrorAlert() {
+  $(".alert-danger").remove()
+  $(".content").prepend(
+    "<div class='alert alert-danger'>" +
+    "<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>" +
+    "<strong>Oh No!</strong> There was an problem creating your issue, Please try again." +
+    "</div>"
+  );
 }
