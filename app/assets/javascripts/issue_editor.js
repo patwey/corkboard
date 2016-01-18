@@ -11,6 +11,7 @@ function toInProgress($issue) {
       url:  "https://api.github.com/repos/" + repoName + "/issues/" + $issueNumber +"?access_token=" + accessToken,
       data: postParams,
       success: function(newIssue) {
+        showIssueMovedAlert($issueNumber);
         renderIssue(newIssue)
         $issue.remove()
       },
@@ -37,6 +38,7 @@ function toComplete($issue) {
       url:  "https://api.github.com/repos/" + repoName + "/issues/" + $issueNumber +"?access_token=" + accessToken,
       data: postParams,
       success: function(newIssue) {
+        showIssueMovedAlert($issueNumber);
         renderIssue(newIssue)
         $issue.remove()
       },
@@ -63,6 +65,7 @@ function toBacklog($issue) {
       url:  "https://api.github.com/repos/" + repoName + "/issues/" + $issueNumber +"?access_token=" + accessToken,
       data: postParams,
       success: function(newIssue) {
+        showIssueMovedAlert($issueNumber);
         renderIssue(newIssue)
         $issue.remove()
       },
