@@ -6,16 +6,21 @@ function toInProgress($issue) {
     var accessToken = currentUser.token
     var postParams = '{"state": "open", "labels": ["in progress"]}'
 
+    $(".alert").remove();
+    showSpinner($(".flash"));
+
     $.ajax({
       type: "PATCH",
       url:  "https://api.github.com/repos/" + repoName + "/issues/" + $issueNumber +"?access_token=" + accessToken,
       data: postParams,
       success: function(newIssue) {
+        hideSpinners();
         showIssueMovedAlert($issueNumber);
         renderIssue(newIssue)
         $issue.remove()
       },
       failure: function(xhr) {
+        hideSpinners();
         alert(xhr.responseText)
       }
     })
@@ -33,16 +38,21 @@ function toComplete($issue) {
     var accessToken = currentUser.token
     var postParams = '{"state": "closed", "labels": []}'
 
+    $(".alert").remove();
+    showSpinner($(".flash"));
+
     $.ajax({
       type: "PATCH",
       url:  "https://api.github.com/repos/" + repoName + "/issues/" + $issueNumber +"?access_token=" + accessToken,
       data: postParams,
       success: function(newIssue) {
+        hideSpinners();
         showIssueMovedAlert($issueNumber);
         renderIssue(newIssue)
         $issue.remove()
       },
       failure: function(xhr) {
+        hideSpinners();
         alert(xhr.responseText)
       }
     })
@@ -60,16 +70,21 @@ function toBacklog($issue) {
     var accessToken = currentUser.token
     var postParams = '{"state": "open", "labels": []}'
 
+    $(".alert").remove();
+    showSpinner($(".flash"));
+
     $.ajax({
       type: "PATCH",
       url:  "https://api.github.com/repos/" + repoName + "/issues/" + $issueNumber +"?access_token=" + accessToken,
       data: postParams,
       success: function(newIssue) {
+        hideSpinners();
         showIssueMovedAlert($issueNumber);
         renderIssue(newIssue)
         $issue.remove()
       },
       failure: function(xhr) {
+        hideSpinners();
         alert(xhr.responseText)
       }
     })

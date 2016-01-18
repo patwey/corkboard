@@ -8,17 +8,20 @@ function createIssue() {
       var body = $("#issue-description").val();
       var issueParams = '{"title":"'+ title +'", "body":"'+ body +'"}';
 
+      showSpinner($(".flash"));
       $.ajax({
         type: "POST",
         url:  url,
         data: issueParams,
         success: function(newIssue) {
+          hideSpinners();
           showSuccessfulAddAlert();
           renderIssue(newIssue);
           $("#issue-title").val("");
           $("#issue-description").val("");
         },
         error: function(xhr) {
+          hideSpinners();
           showErrorAlert();
           console.log(xhr.responseText);
         }
