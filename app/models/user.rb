@@ -8,14 +8,4 @@ class User < ActiveRecord::Base
       new_user.token    = auth["credentials"]["token"]
     end
   end
-
-  def service
-    GithubService.new(self)
-  end
-
-  def repos
-    service.repos.map do |repo|
-      Repository.new(repo)
-    end
-  end
 end

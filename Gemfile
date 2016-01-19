@@ -15,11 +15,14 @@ gem 'omniauth-github'
 gem 'hurley'
 gem 'skylight'
 gem 'rails_12factor'
+gem 'responders'
 
 group :development, :test do
+  gem 'simplecov', require: false
   gem 'pry'
   gem 'capybara'
   gem 'launchy'
+  gem 'mocha'
 end
 
 group :development do

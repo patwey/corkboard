@@ -24,3 +24,6 @@
 
 # Ignore Skylight
 /config/skylight.yml
+
+# Ignore SimpleCov Files
+coverage
