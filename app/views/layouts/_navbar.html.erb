@@ -2,13 +2,12 @@
   <div class="container">
     <a class="navbar-brand" href="#">Corkboard</a>
     <ul class="nav navbar-nav navbar-right">
-      <li>
         <% if current_user %>
-          <%= link_to "#{current_user.name}", projects_path %>
+          <li><%= link_to "#{current_user.name}", projects_path %></li>
+          <li><%= link_to "Log Out", logout_path %></li>
         <% else %>
-          <%= link_to "Sign In", login_path %>
+          <li><%= link_to "Sign In", login_path %></li>
         <% end %>
-      </li>
     </ul>
   </div>
 </nav>
