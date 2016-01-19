@@ -14,6 +14,7 @@ gem 'figaro'
 gem 'omniauth-github'
 gem 'hurley'
 gem 'skylight'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'pry'
