@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
+  respond_to :json
+
   def current
     if current_user
-      render json: { name:     current_user.name,
-                     username: current_user.username,
-                     token:    current_user.token }
+      respond_with current_user
     end
   end
 end
