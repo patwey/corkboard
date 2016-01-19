@@ -16,6 +16,7 @@ gem 'hurley'
 gem 'skylight'
 
 group :development, :test do
+  gem 'simplecov', require: false
   gem 'pry'
   gem 'capybara'
   gem 'launchy'

@@ -12,7 +12,9 @@ class UserLogsInWithGithubTest < ActionDispatch::IntegrationTest
       {
         provider: "github",
         uid:      "1234567",
-        info: { name: "Pat Wey" }
+        info:     { name: "Pat Wey" },
+        extra:    { raw_info: { login: "patwey" }},
+        credentials: { credentials: { token: "abcdefghijklmnop" }}
       })
   end
 
