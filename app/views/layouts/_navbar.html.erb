@@ -3,10 +3,12 @@
     <a class="navbar-brand" href="#">Corkboard</a>
     <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-          <li><%= link_to "#{current_user.name}", projects_path %></li>
-          <li><%= link_to "Log Out", logout_path %></li>
+          <li><%= link_to "#{current_user.name}",
+                          projects_path,
+                          class: "current-user" %></li>
+          <li><%= link_to "Log Out", logout_path, class: "log-out" %></li>
         <% else %>
-          <li><%= link_to "Sign In", login_path %></li>
+          <li><%= link_to "Sign In", login_path, class: "sign-in" %></li>
         <% end %>
     </ul>
   </div>
