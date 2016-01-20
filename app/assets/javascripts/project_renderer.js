@@ -12,8 +12,7 @@ function repoDescription(repo) {
 
 function projectTemplate(name, description) {
   return "<div class='row'>" +
-         "<div class='container'>" +
-         "<div class='col-md-8 col-md-offset-2'>" +
+         "<div class='col-md-12'>" +
          "<a class='board-panel' href='/projects/" + name + "''>" +
          "<div class='panel panel-warning'>" +
          "<div class='panel-heading'>" +
@@ -23,7 +22,6 @@ function projectTemplate(name, description) {
          "<span class='project-description'>"+
          description +
          "</span>" +
-         "</div>" +
          "</div>" +
          "</a>" +
          "</div>" +
