@@ -1,23 +1,24 @@
 function draggableIssues() {
   $(".issue").draggable({
-    containment: $(".cards")
+    containment: $(".cards"),
+    stack: ".cards"
   });
 
-  $( "#in-progress" ).droppable({
+  $("#in-progress").droppable({
     accept: ".issue",
     drop: function(event, ui) {
       toInProgress(ui.draggable);
     }
   });
 
-  $( "#backlog" ).droppable({
+  $("#backlog").droppable({
     accept: ".issue",
     drop: function(event, ui) {
       toBacklog(ui.draggable);
     }
   });
 
-  $( "#complete" ).droppable({
+  $("#complete").droppable({
     accept: ".issue",
     drop: function(event, ui) {
       toComplete(ui.draggable);

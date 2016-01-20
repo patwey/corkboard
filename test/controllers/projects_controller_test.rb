@@ -4,10 +4,13 @@ class ProjectsControllerTest < ActionController::TestCase
   def user
     User.new(name:     "Pat Wey",
              username: "patwey",
-             token:    "123abc456def")
+             token:    "123abc456def",
+             image:    "example.jpg")
   end
 
   test "#index" do
+    ApplicationController.any_instance.stubs(:current_user).returns(user)
+    
     get :index
 
     assert_equal 200, response.status
