@@ -1,11 +1,11 @@
 function fetchRepos() {
   $.get("/current", function(currentUser) {
-    var currentUsername = currentUser.username;
-
-    $.get("https://api.github.com/users/"+ currentUsername +"/repos", function(repos) {
+    $.get("https://api.github.com/user/repos?access_token="+ currentUser.token +"&visibility=public&affiliation=owner&sort=updated", function(repos) {
       $(".spinner").hide();
       $.each(repos, function(index, repo) {
-        renderProject(repo);
+        if (!repo.fork) {
+          renderProject(repo);
+        }
       });
     });
   });
