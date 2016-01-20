@@ -37,18 +37,6 @@ function issueTemplate(issue, type, labels) {
   );
 }
 
-function issueLabel(labels) {
-  if (labels.includes("help wanted")) {
-    return "<div class='pull-right'><span class='label label-success'>Help Wanted</span></div>"
-  } else if (labels.includes("enhancement")) {
-    return "<div class='pull-right'><span class='label label-info'>Enhancement</span></div>"
-  } else if (labels.includes("bug")) {
-    return "<div class='pull-right'><span class='label label-danger'>Bug</span></div>"
-  } else {
-    return ""
-  }
-}
-
 function issueSelector(type) {
   var selectors = { "in progress":"#in-progress",
                     "backlog":"#backlog",
@@ -62,5 +50,17 @@ function issueBody(issue) {
     return issue.body;
   } else {
     return "";
+  }
+}
+
+function issueLabel(labels) {
+  if (labels.includes("help wanted")) {
+    return "<div class='pull-right'><span class='label label-success'>Help Wanted</span></div>"
+  } else if (labels.includes("enhancement")) {
+    return "<div class='pull-right'><span class='label label-info'>Enhancement</span></div>"
+  } else if (labels.includes("bug")) {
+    return "<div class='pull-right'><span class='label label-danger'>Bug</span></div>"
+  } else {
+    return ""
   }
 }

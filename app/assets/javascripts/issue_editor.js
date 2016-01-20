@@ -1,11 +1,11 @@
 function toInProgress($issue) {
   var repoName = $('#repo-name').html()
   var $issueNumber = $issue.children(".panel-heading").children(".issue-number").html()
+  var labels = inProgressLabels($issue);
 
   $.get("/current", function(currentUser) {
     var accessToken = currentUser.token
-    var postParams = '{"state": "open", "labels": ["in progress"]}'
-
+    var postParams = '{"state": "open", "labels":' + labels + '}'
     $(".alert").remove();
     showSpinner($(".flash"));
 
@@ -33,10 +33,11 @@ function toInProgress($issue) {
 function toComplete($issue) {
   var repoName = $('#repo-name').html()
   var $issueNumber = $issue.children(".panel-heading").children(".issue-number").html()
+  var labels = inProgressLabels($issue);
 
   $.get("/current", function(currentUser) {
     var accessToken = currentUser.token
-    var postParams = '{"state": "closed", "labels": []}'
+    var postParams = '{"state": "closed", "labels":'+ labels +'}'
 
     $(".alert").remove();
     showSpinner($(".flash"));
@@ -65,10 +66,11 @@ function toComplete($issue) {
 function toBacklog($issue) {
   var repoName = $('#repo-name').html()
   var $issueNumber = $issue.children(".panel-heading").children(".issue-number").html()
+  var labels = backlogLabels($issue);
 
   $.get("/current", function(currentUser) {
     var accessToken = currentUser.token
-    var postParams = '{"state": "open", "labels": []}'
+    var postParams = '{"state": "open", "labels":' + labels + '}'
 
     $(".alert").remove();
     showSpinner($(".flash"));

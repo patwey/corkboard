@@ -7,8 +7,7 @@ function createIssue() {
       var title = $("#issue-title").val();
       var body = $("#issue-description").val();
       var label = $("#issue-label").val();
-      var issueParams = '{"title":"'+ title +'", "body":"'+ body +'", "labels":["'+ label + '"]}';
-      debugger
+      var issueParams = '{"title":"'+ title +'", "body":"'+ body +'", "labels":["' + label + '"]}';
 
       showSpinner($(".flash"));
 
@@ -17,7 +16,6 @@ function createIssue() {
         url:  url,
         data: issueParams,
         success: function(newIssue) {
-          debugger
           hideSpinners();
           showSuccessfulAddAlert();
           renderIssue(newIssue);
