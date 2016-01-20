@@ -6,7 +6,9 @@ function createIssue() {
       var url = "https://api.github.com/repos/" + repoName + "/issues?access_token=" + currentUser.token;
       var title = $("#issue-title").val();
       var body = $("#issue-description").val();
-      var issueParams = '{"title":"'+ title +'", "body":"'+ body +'"}';
+      var label = $("#issue-label").val();
+      var issueParams = '{"title":"'+ title +'", "body":"'+ body +'", "labels":["'+ label + '"]}';
+      debugger
 
       showSpinner($(".flash"));
 

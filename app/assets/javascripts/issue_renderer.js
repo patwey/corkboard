@@ -4,7 +4,7 @@ function renderIssue(issue) {
   });
   var issueType = getIssueType(issue, labels);
 
-  issueTemplate(issue, issueType);
+  issueTemplate(issue, issueType, labels);
 }
 
 function getIssueType(issue, labels) {
@@ -17,9 +17,10 @@ function getIssueType(issue, labels) {
   }
 }
 
-function issueTemplate(issue, type) {
+function issueTemplate(issue, type, labels) {
   var selector = issueSelector(type);
   var body     = issueBody(issue);
+  var label    = issueLabel(labels);
 
   $(selector).append(
     "<div class='issue panel panel-warning ui-widget-content'>" +
@@ -30,9 +31,22 @@ function issueTemplate(issue, type) {
     "<span>" +
     body +
     "</span>" +
+    label +
     "</div>"+
     "</div>"
   );
+}
+
+function issueLabel(labels) {
+  if (labels.includes("help wanted")) {
+    return "<div class='pull-right'><span class='label label-success'>Help Wanted</span></div>"
+  } else if (labels.includes("enhancement")) {
+    return "<div class='pull-right'><span class='label label-info'>Enhancement</span></div>"
+  } else if (labels.includes("bug")) {
+    return "<div class='pull-right'><span class='label label-danger'>Bug</span></div>"
+  } else {
+    return ""
+  }
 }
 
 function issueSelector(type) {

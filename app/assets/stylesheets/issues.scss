@@ -1,6 +1,6 @@
 .add-issue {
   padding-top: 26px !important;
-  
+
 }
 
 .arrow {
@@ -34,4 +34,8 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display:         flex;
+}
+
+#issue-label {
+  width: 25%;
 }

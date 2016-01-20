@@ -40,8 +40,18 @@
             </div>
 
             <div class="form-group">
-              <label for="description">Description (optional)</label>
+              <label for="issue-description">Description (optional)</label>
               <textarea class="form-control" id="issue-description" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="issue-label">Label:</label>
+              <select id="issue-label" class="form-control">
+                <option disabled selected></option>
+                <option value="enhancement">Enhancement</option>
+                <option value="bug">Bug</option>
+                <option value="help wanted">Help Wanted</option>
+              </select>
             </div>
 
             <div class="text-right">
