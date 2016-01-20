@@ -9,11 +9,13 @@ function createIssue() {
       var issueParams = '{"title":"'+ title +'", "body":"'+ body +'"}';
 
       showSpinner($(".flash"));
+
       $.ajax({
         type: "POST",
         url:  url,
         data: issueParams,
         success: function(newIssue) {
+          debugger
           hideSpinners();
           showSuccessfulAddAlert();
           renderIssue(newIssue);
