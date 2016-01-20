@@ -15,11 +15,34 @@
   color: black !important;
 }
 
-.issues {
-  height: 100vh;
-}
-
 .spinner {
   font-size: 24px;
   color: #888888 !important;
+}
+
+#backlog {
+  // right
+  border-right: 1px solid #e6e6e6;
+}
+
+#complete {
+  // left
+  border-left: 1px solid #e6e6e6;
+}
+
+.backlog-header {
+  // right
+  border-right: 1px solid #e6e6e6;
+}
+
+.complete-header {
+  // left
+  border-left: 1px solid #e6e6e6;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
 }

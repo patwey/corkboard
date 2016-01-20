@@ -221,11 +221,8 @@ DEPENDENCIES
   pg
   pry
   rails (= 4.2.4)
-<<<<<<< HEAD
   rails_12factor
-=======
   responders
->>>>>>> testing
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simplecov

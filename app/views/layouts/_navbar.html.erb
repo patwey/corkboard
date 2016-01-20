@@ -1,6 +1,6 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">Corkboard</a>
+    <%= render partial: "layouts/navbar_breadcrumbs" %>
     <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li><%= link_to "#{current_user.name}",

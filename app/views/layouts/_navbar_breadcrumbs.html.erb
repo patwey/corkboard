@@ -1,0 +1,10 @@
+<a class="navbar-brand" href="<%= root_path %>">Corkboard</a>
+<% if current_user %>
+  <span class="navbar-brand">/</span>
+  <a class="navbar-brand" href="<%= projects_path %>">Projects</a>
+<% end %>
+
+<% if @repo_name %>
+  <span class="navbar-brand">/</span>
+  <a class="navbar-brand" href="#"><%= @repo_name.split("/").last %></a>
+<% end %>
