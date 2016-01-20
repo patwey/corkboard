@@ -4,7 +4,9 @@ function fetchIssues() {
 
   $.get(repos_url, function(issues) {
     $.each(issues, function(idx, issue) {
-      renderIssue(issue, "append");
+      if (!issue.pull_request) {
+        renderIssue(issue, "append");
+      }
     });
   })
 
