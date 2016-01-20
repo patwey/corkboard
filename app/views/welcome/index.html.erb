@@ -9,9 +9,9 @@
 
       <div class="text-center">
         <% if current_user %>
-          <%= link_to "My Projects", projects_path, class: "btn btn-default btn-lg" %>
+          <%= link_to "My Projects", projects_path, class: "welcome-btn btn btn-default btn-lg" %>
         <% else %>
-          <%= link_to "Sign In With GitHub", login_path, class: "btn btn-default btn-lg" %>
+          <%= link_to "Sign In With GitHub", login_path, class: "welcome-btn btn btn-default btn-lg" %>
         <% end %>
       </div>
     </div>
@@ -28,7 +28,7 @@
 
     <div class="col-md-3 col-md-offset-2">
       <h4 class="text-center">Organize your team.</h4>
-      <p class="text-center">Know, at a glance, what needs to be worked on, what's in the works, and what's been finished.</p>
+      <p class="text-center">At a glance: know what needs to be worked on, what's in the works, and what's been finished.</p>
     </div>
   </div>
 </div>
