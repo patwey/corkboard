@@ -10,7 +10,7 @@ function showErrorAlert() {
   );
 }
 
-function showSuccessAddAlert() {
+function showSuccessfulAddAlert() {
   $(".alert").remove()
   $(".flash").prepend(
     "<div class='col-md-6 col-md-offset-3'>" +
