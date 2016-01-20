@@ -9,6 +9,7 @@ function draggableIssues() {
     drop: function(event, ui) {
       if (ui.draggable.parent().attr("id") == "in-progress") {
         $(ui.draggable).draggable("option", "revert", true);
+        $(ui.draggable).draggable("option", "stack", ".cards");
       } else {
         $(ui.draggable).draggable("option", "revert", false);
         ui.draggable.remove();
@@ -22,6 +23,7 @@ function draggableIssues() {
     drop: function(event, ui) {
       if (ui.draggable.parent().attr("id") == "backlog") {
         $(ui.draggable).draggable("option", "revert", true);
+        $(ui.draggable).draggable("option", "stack", ".cards");
       } else {
         $(ui.draggable).draggable("option", "revert", false);
         ui.draggable.remove();
@@ -35,6 +37,7 @@ function draggableIssues() {
     drop: function(event, ui) {
       if (ui.draggable.parent().attr("id") == "complete") {
         $(ui.draggable).draggable("option", "revert", true);
+        $(ui.draggable).draggable("option", "stack", ".cards");
       } else {
         $(ui.draggable).draggable("option", "revert", false);
         ui.draggable.remove();
