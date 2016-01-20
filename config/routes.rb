@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get "/current", to: "users#current", defaults: { format: :json }
 
   resources :projects, only: [:index]
-  get "/projects/:project_name", to: "projects#show"
+  get "/projects/:project_name", to: "projects#show", constraints: { :project_name => /[^\/]+/ }
 end
