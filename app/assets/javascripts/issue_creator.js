@@ -18,7 +18,7 @@ function createIssue() {
         success: function(newIssue) {
           hideSpinners();
           showSuccessfulAddAlert();
-          renderIssue(newIssue);
+          renderIssue(newIssue, "prepend");
           $("#issue-title").val("");
           $("#issue-description").val("");
         },

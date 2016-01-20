@@ -16,7 +16,7 @@ function toInProgress($issue) {
       success: function(newIssue) {
         hideSpinners();
         showIssueMovedAlert($issueNumber);
-        renderIssue(newIssue)
+        renderIssue(newIssue, "prepend")
         $issue.remove()
       },
       failure: function(xhr) {
@@ -49,7 +49,7 @@ function toComplete($issue) {
       success: function(newIssue) {
         hideSpinners();
         showIssueMovedAlert($issueNumber);
-        renderIssue(newIssue)
+        renderIssue(newIssue, "prepend")
         $issue.remove()
       },
       failure: function(xhr) {
@@ -82,7 +82,7 @@ function toBacklog($issue) {
       success: function(newIssue) {
         hideSpinners();
         showIssueMovedAlert($issueNumber);
-        renderIssue(newIssue)
+        renderIssue(newIssue, "prepend")
         $issue.remove()
       },
       failure: function(xhr) {

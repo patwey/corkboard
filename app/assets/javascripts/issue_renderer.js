@@ -1,10 +1,15 @@
-function renderIssue(issue) {
+function renderIssue(issue, option) {
   var labels = issue.labels.map(function(label) {
     return label.name;
   });
   var issueType = getIssueType(issue, labels);
+  var selector = issueSelector(issueType);
 
-  issueTemplate(issue, issueType, labels);
+  if (option == "prepend") {
+    $(selector).prepend(issueTemplate(issue, labels));
+  } else {
+    $(selector).append(issueTemplate(issue, labels));
+  }
 }
 
 function getIssueType(issue, labels) {
@@ -17,24 +22,21 @@ function getIssueType(issue, labels) {
   }
 }
 
-function issueTemplate(issue, type, labels) {
-  var selector = issueSelector(type);
+function issueTemplate(issue, labels) {
   var body     = issueBody(issue);
   var label    = issueLabel(labels);
 
-  $(selector).append(
-    "<div class='issue panel panel-warning ui-widget-content'>" +
-    "<div class='panel-heading'>" +
-    "<span class='issue-number'>" + issue.number + "</span>" + " - " + issue.title +
-    "</div>" +
-    "<div class='panel-body'>" +
-    "<span>" +
-    body +
-    "</span>" +
-    label +
-    "</div>"+
-    "</div>"
-  );
+  return "<div class='issue panel panel-warning ui-widget-content'>" +
+         "<div class='panel-heading'>" +
+         "<span class='issue-number'>" + issue.number + "</span>" + " - " + issue.title +
+         "</div>" +
+         "<div class='panel-body'>" +
+         "<span>" +
+         body +
+         "</span>" +
+         label +
+         "</div>"+
+         "</div>"
 }
 
 function issueSelector(type) {
