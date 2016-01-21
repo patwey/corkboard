@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   resources :projects, only: [:index]
   get "/projects/:project_name", to: "projects#show", constraints: { :project_name => /[^\/]+/ }
+
+  get "*unmatched_route", to: "application#not_found"
 end
