@@ -1,8 +1,10 @@
 ## Corkboard
 
+[Live Application](http://corkboard-patwey.herokuapp.com/)
+
 A project management tool that consumes the Github API to track progress using Issues.
 
-[Live Application](http://corkboard-patwey.herokuapp.com/)
+![](http://recordit.co/d6NtUKcULT)
 
 #### Using Corkboard
 
