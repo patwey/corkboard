@@ -4,7 +4,7 @@
 
 A project management tool that consumes the Github API to track progress using Issues.
 
-![](http://recordit.co/d6NtUKcULT)
+![](http://recordit.co/d6NtUKcULT.gif)
 
 #### Using Corkboard
 
