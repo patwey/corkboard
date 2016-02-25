@@ -19,7 +19,7 @@ function hideSpinners() {
 
 function renderValidRepos(repos) {
   $.each(repos, function(idx, repo) {
-    if (isValidRepo) { renderProject(repo); }
+    if (isValidRepo) { renderRepo(repo); }
   });
 }
 

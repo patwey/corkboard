@@ -1,16 +1,4 @@
-function renderProject(repo) {
-  $("#projects").append(projectTemplate(repo.name, repoDescription(repo)));
-}
-
-function repoDescription(repo) {
-  if (repo.description) {
-    return repo.description;
-  } else {
-    return "";
-  }
-}
-
-function projectTemplate(name, description) {
+function repoTemplate(name, description) {
   return "<div class='row'>" +
          "<div class='col-md-12'>" +
          "<a class='board-panel' href='/projects/" + name + "''>" +
