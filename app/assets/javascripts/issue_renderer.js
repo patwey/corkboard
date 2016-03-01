@@ -22,17 +22,12 @@ function issueLabel(labelNames) {
 }
 
 function getLabelNodeData(labels) {
-  switch (labels) {
-    case labels.includes("help wanted"):
-      return ["Help Wanted", "label-success"];
-      break;
-    case labels.includes("enhancement"):
-      return ["Enhancement", "label-info"];
-      break;
-    case labels.includes("bug"):
-      debugger
-      return ["Bug", "label-danger"];
-      break;
+  if (labels.includes("help wanted")) {
+    return ["Help Wanted", "label-success"];
+  } else if (labels.includes("enhancement")) {
+    return ["Enhancement", "label-info"];
+  } else if (labels.includes("bug")) {
+    return ["Bug", "label-danger"];
   }
 }
 
@@ -41,7 +36,7 @@ function getLabelDOMNode(labelNodeData) {
     var labelText = labelNodeData[0];
     var labelStyle = labelNodeData[1];
 
-    return "<div class='pull-right'><span class='label" + labelStyle + "label-success'>" +
+    return "<div class='pull-right'><span class='label " + labelStyle + "'>" +
            labelText + "</span></div>"
   } else {
     return ""
