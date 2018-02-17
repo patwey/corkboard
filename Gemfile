@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.4'
-gem 'pg'
+gem 'rails', '~> 4.0'
+gem 'pg', '~> 0.11'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -10,7 +10,6 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'figaro'
 gem 'omniauth-github'
 gem 'hurley'
 gem 'skylight'
